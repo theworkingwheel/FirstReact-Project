@@ -15,8 +15,14 @@ const title = props.title;
        function HomePage() {
   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
+  const [likes, setLikes] = React.useState(0);
+
+  function handleLike() {
+    setLikes(likes + 1);
+  }
+
   function handleButtonClick() {
-    // Code to handle the button click
+    console.log('increment like count');
   }
 
   return (
@@ -27,7 +33,8 @@ const title = props.title;
           <li key={name}>{name}</li>
         ))}
       </ul>
-      <button onClick={handleButtonClick}>Like</button>
+      <button onClick={handleLike}>Likes ({likes})</button>
+
     </div>
   );
 }
